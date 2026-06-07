@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil Pengguna</title>
+</head>
+<body>
+    <div style="max-width: 500px; margin: 50px auto; padding: 20px; border: 1px solid #ccc;">
+        <h2>👤 Profil Pengguna (Secured)</h2>
+        <p>Nama Pengguna: <strong>{{ request.user.username }}</strong></p>
+        <p>Alamat E-mel: <strong>{{ request.user.email|default:"Tiada e-mel disediakan" }}</strong></p>
+        <p>Status Akaun: <strong>{% if request.user.is_superuser %}Administrator (Admin){% else %}Pengguna Biasa{% endif %}</strong></p>
+        <hr>
+        <p><a href="{% url 'dashboard' %}">⬅️ Kembali ke Dashboard</a></p>
+    </div>
+</body>
+</html>

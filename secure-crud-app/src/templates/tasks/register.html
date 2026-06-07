@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <title>Pendaftaran Pengguna Selamat</title>
+</head>
+<body>
+    <div style="max-width: 400px; margin: 50px auto; padding: 20px; border: 1px solid #ccc;">
+        <h2>Daftar Akaun Baru</h2>
+        <form method="POST">
+            <!-- PENTING: Token CSRF ni wajib ada dalam Django untuk halang hacker menyamar jadi user! -->
+            {% csrf_token %} 
+            
+            {{ form.as_p }}
+            
+            <button type="submit" style="width: 100%; padding: 10px;">Daftar Pengguna</button>
+        </form>
+    </div>
+</body>
+</html>

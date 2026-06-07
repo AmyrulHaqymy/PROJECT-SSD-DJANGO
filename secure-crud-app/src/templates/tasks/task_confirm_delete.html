@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <title>Sahkan Padam Tugasan</title>
+</head>
+<body>
+    <div style="max-width: 500px; margin: 50px auto; padding: 20px; border: 1px solid red; background-color: #fff5f5;">
+        <h2>⚠️ Sahkan Pemadaman</h2>
+        <p>Adakah anda pasti mahu memadam tugasan: <strong>"{{ task.title }}"</strong>?</p>
+        
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" style="background-color: red; color: white; padding: 7px 20px; border: none; cursor: pointer;">Ya, Padam Sila</button>
+            <a href="{% url 'dashboard' %}" style="margin-left: 10px; color: black;">Batal</a>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <title>Kemaskini Tugasan</title>
+</head>
+<body>
+    <div style="max-width: 500px; margin: 50px auto; padding: 20px; border: 1px solid #ccc;">
+        <h2>✏️ Kemaskini Tugasan</h2>
+        <p>Mengedit: <strong>{{ task.title }}</strong></p>
+        
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" style="padding: 7px 20px;">Kemaskini</button>
+            <a href="{% url 'dashboard' %}" style="margin-left: 10px;">Batal</a>
+        </form>
+    </div>
+</body>
+</html>

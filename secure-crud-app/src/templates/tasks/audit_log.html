@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <title>Audit Log Pemantauan Keselamatan</title>
+</head>
+<body>
+    <div style="max-width: 900px; margin: 30px auto; padding: 20px; border: 1px solid red;">
+        <h2>🛡️ Sistem Audit Log (Security Monitoring)</h2>
+        <p>Halaman ini hanya boleh diakses oleh: <strong>Admin / Superuser Sahaja</strong></p>
+        
+        <hr>
+
+        <h3>Rekod Aktiviti Tugasan Pengguna (CRUD Trail)</h3>
+        <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; text-align: left;">
+            <thead>
+                <tr style="background-color: #f2f2f2;">
+                    <th>Pengguna (User)</th>
+                    <th>Tajuk Tugasan (Task Title)</th>
+                    <th>Status Selesai</th>
+                    <th>Tarikh & Masa Rekod</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in logs %}
+                <tr>
+                    <td><strong>{{ log.user.username }}</strong></td>
+                    <td>{{ log.title }}</td>
+                    <td>
+                        {% if log.is_completed %}
+                            <span style="color: green;">✅ Selesai</span>
+                        {% else %}
+                            <span style="color: red;">⏳ Dalam Proses</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ log.created_at }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4">Tiada rekod log aktiviti dijumpai.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <hr>
+        <p><a href="{% url 'dashboard' %}">⬅️ Kembali ke Dashboard</a></p>
+    </div>
+</body>
+</html>
