@@ -1,5 +1,6 @@
 .venv/
 .vscode/
 *.sqlite3
-secure-crud-app/.env
 .env
+secure-crud-app/.env
+secure-crud-app/src/.env
