@@ -1,4 +1,3 @@
-
 # Secure Task Management CRUD Web Application
 
 ## 1. Project Description
@@ -27,23 +26,21 @@ The system relies on the following core baseline dependencies:
 
 ### Step 1: Clone the Repository
 Pull down the project files from the remote source control pipeline:
-`git clone https://github.com/AmyrulHaqymy/PROJECT-SSD-DJANGO.git`
-`cd PROJECT-SSD-DJANGO`
+git clone https://github.com/AmyrulHaqymy/PROJECT-SSD-DJANGO.git
+cd PROJECT-SSD-DJANGO
 
 ### Step 2: Initialize and Activate Virtual Environment
 Isolate execution dependencies locally using Python's virtual environment wrapper:
-`python -m venv .venv`
-
-# Activation for Windows (PowerShell):
-`.venv\Scripts\activate`
+python -m venv .venv
+.venv\Scripts\activate
 
 ### Step 3: Install Required Dependencies
 Pull and install core runtime components from the package repository index:
-`pip install django python-dotenv`
+pip install django python-dotenv
 
 ### Step 4: Configure Local Environment Parameters
 Generate your local configuration file by duplicating the provided secure fallback template:
-`cp .env.example .env`
+cp .env.example .env
 
 ---
 
@@ -51,24 +48,34 @@ Generate your local configuration file by duplicating the provided secure fallba
 
 ### Step 1: Navigate to Source Context
 Move your terminal execution context into the primary Django workspace directory:
-`cd secure-crud-app/src`
+cd secure-crud-app/src
 
 ### Step 2: Initialize Database Migrations
 Sync database tracking tables and compile structural definitions locally:
-`python manage.py migrate`
+python manage.py migrate
 
 ### Step 3: Launch Secure Development Server
 Initialize the local web application pipeline:
-`python manage.py runserver`
+python manage.py runserver
 
-The secure workspace portal will now listen locally at: http://127.0.0.1:8000/
+The secure workspace portal will now listen locally at: http://127.0.0.1:8000/login/
 
 ---
 
 ## 6. System Testing & Evidence Screenshots
 
-### Security Monitoring Architecture (Audit Log View)
-Displays the operational monitoring trail accessible only by authorized administrative users, highlighting comprehensive transaction auditing.
+### 1. User Authentication (Login Interface)
+The entry validation interface enforcing secure session parameters upon successful token matching.
+![alt text](image-1.png)
 
-### Access Violation Deflection (HTTP 403 Runtime Proof)
+### 2. Task Dashboard (Secure CRUD Operations)
+The core web application interface displaying user-isolated task creation, updating, and deletion boundaries.
+![alt text](image.png)
+
+### 3. Administrative Security Monitoring (Audit Log View)
+Displays the operational monitoring trail accessible only by authorized administrative users, highlighting comprehensive transaction auditing.
+![alt text](image-2.png)
+
+### 4. Access Violation Deflection (HTTP 403 Runtime Proof)
 Verification evidence showing the system's defensive layer catching an illegal route violation attempt, securely breaking the thread with a generic 403 restriction log.
+![alt text](image-3.png)
